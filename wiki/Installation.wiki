@@ -6,7 +6,7 @@
 <p>This ZIP file contains all the files necessary to begin the Certification Process for the IPCommerce/Paymentech Payment Platform.</p>
 
 = Details =
-<p>Merchants can not begin testing until they receieve testing ID's and URL's via email from the certification group.</p>
+<p>Merchants can not begin testing until they receive testing ID's and URL's via email from the certification group.</p>
 <p>If you need to begin certification, please logon to the IPCommerce/ChasePaymentech Labs site http://lab.chasepaymentechxpress.com/. Create an account and you'll be contacted by a representative who'll ask about your Merchant status etc. You should already have a merchant account with Chase so you'll be able to provide that information to the IPCommerce rep. They'll ask about the platform etc...</p>
 <p>For this you can just tell them it's going to be:
 <ul>
