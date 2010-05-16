@@ -37,7 +37,7 @@ Add a blank line before this line. Add a comma. Then copy the strings in this pa
 <ol>
 <li> Store, List Payment Methods, New</li>
 <li>The Payment Method Form is displayed. In the Payment Method Name field type IPCommerce</li>
-<li>In the Code filed type IPCOM</li>
+<li>In the Code field type IPCOM</li>
 <li>Select the "ps_ipcommerce" module in the Payment class name drop-down list.</li>
 <li>Select the radio-button labeled "Use Payment Processor" for the "Payment method type"</li>
 <li>Save</li>
@@ -46,7 +46,7 @@ Add a blank line before this line. Add a comma. Then copy the strings in this pa
 <li>Gather all the configuration information from your IPCommerce representative. IP's URL's MerchantID etc...</li>
 <li>This new Payment Method should appear in the List of Payment Methods in the Virtuemart Store administration area.</li>
 <li>Select the IPCommerce payment method and then the Configuration tab.</li>
-<li>Enter the approriate data in the fields provided. Add the PTLSSocketId as you Virtuemart Transaction key.</li>
+<li>Enter the approriate data in the fields provided. Add the PTLSSocketId as your Virtuemart Transaction key.</li>
 </ol>
 
 = What's Next - Testing/Certification =
