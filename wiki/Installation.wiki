@@ -46,7 +46,15 @@ Add a blank line before this line. Add a comma. Then copy the strings in this pa
 <li>Gather all the configuration information from your IPCommerce representative. IP's URL's MerchantID etc...</li>
 <li>This new Payment Method should appear in the List of Payment Methods in the Virtuemart Store administration area.</li>
 <li>Select the IPCommerce payment method and then the Configuration tab.</li>
-<li>Enter the approriate data in the fields provided. Add the PTLSSocketId as your Virtuemart Transaction key.</li>
+<li>Enter the PTLSSocketID in the form it's something like 0123456789012345.</li>
+<li>Enter the Test (Sandbox) Host URL's etc... it should be something like
+txn-01.sandbox.ipcommerce.com</li>
+<li>Enter the Service ID it's something like 0123456789.</li>
+<li>Enter the Transaction Key, this is a very long hex string and uniquely
+identifies your transactions.</li>
+<li>Enter the Merchant ID it's something like 01234.</li>
+<li>Save</li>
+<li>Turn on Debugging in VirtueMart. This is needed for the TrxnCodes.</li>
 </ol>
 
 = What's Next - Testing/Certification =
@@ -54,7 +62,9 @@ Add a blank line before this line. Add a comma. Then copy the strings in this pa
 <p>Near line 470 of ps_ipcommerce.php you'll notice an array of test data elements calls $billInfo. I've set this to the first test data they required me to send to the sandbox testing server. You'll need to edit this line several times to get through the entire testing process.</p>
 <p>
 I used the following data for part of my certification but yours may be different...
+<pre>
 {{{
 $billInfo = array('ppbcp:SeqNum'=> 994, 'SeqNum'=> 994, 'ppbcp:Amt' => 12.00, 'ppbcp:TotalItems' => 1, 'ppbcp:CVDataInd' => 'Provided', 'ppbcp:AVSData' => true, 'first_name' => 'John', 'last_name' => 'Smith', 'address_1' => '1400 16th Street', 'city' => 'Denver', 'state' => 'CO', 'zip' => '80202', 'credit_card_type' => 'Visa', 'order_payment_number' => '4111111111111111', 'order_payment_expire_month' => 12, 'order_payment_expire_year' => 2010, 'credit_card_code' => 111);
 }}}
+</pre>
 </p>
