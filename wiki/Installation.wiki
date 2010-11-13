@@ -68,3 +68,4 @@ $billInfo = array('ppbcp:SeqNum'=> 994, 'SeqNum'=> 994, 'ppbcp:Amt' => 12.00, 'p
 }}}
 </pre>
 </p>
+<p>Now just run through the normal checkout process in VirtueMart. You'll need to enter a real CC number or VM will complain during the checkout. Don't worry you won't get billed since the test data is what gets sent in Test Mode.</p>
