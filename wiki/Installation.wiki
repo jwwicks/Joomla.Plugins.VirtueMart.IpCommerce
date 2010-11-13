@@ -53,7 +53,7 @@ txn-01.sandbox.ipcommerce.com</li>
 <li>Enter the Transaction Key, this is a very long hex string and uniquely
 identifies your transactions.</li>
 <li>Enter the Merchant ID it's something like 01234.</li>
-<li>Lastly make sure Test Mode is set</li>
+<li>Lastly make sure Test Mode is set to Yes</li>
 <li>Save</li>
 <li>Turn on Debugging in VirtueMart. This is needed for the TrxnCodes.</li>
 </ol>
@@ -70,3 +70,9 @@ $billInfo = array('ppbcp:SeqNum'=> 994, 'SeqNum'=> 994, 'ppbcp:Amt' => 12.00, 'p
 </pre>
 </p>
 <p>Now just run through the normal checkout process in VirtueMart. You'll need to enter a real CC number or VM will complain during the checkout. Don't worry you won't get billed since the test data is what gets sent in Test Mode. Capture the result of each transaction from the debug information and paste it into the certification spreadsheet your representative should have sent you. Then when you've completed the test suite send it to your tech contact. They'll go over the data and pass or fail any wrong tests. You'll need to repeat any failed tests.</p>
+<p>The debug info will look something like this:
+<pre>
+Debug: OrderNum: 20101113T053428OID2 TxnGuid: XXXXXXXXXXX PTLSStatusCode: 000 PPBCPStatusCode: 000 StatusMessage: APPROVED ApprovalCode: 701877
+Debug: TrxnId: A3A9892B8AD54150999F0A23CAC1FFB6, OrderNum: 62_0d747bdad08606e1227a53e06df5b
+</pre>
+</p>
