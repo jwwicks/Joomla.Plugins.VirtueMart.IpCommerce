@@ -76,3 +76,4 @@ Debug: OrderNum: 20101113T053428OID2 TxnGuid: XXXXXXXXXXX PTLSStatusCode: 000 PP
 Debug: TrxnId: A3A9892B8AD54150999F0A23CAC1FFB6, OrderNum: 62_0d747bdad08606e1227a53e06df5b
 </pre>
 </p>
+<p>What I did was setup a $1.00 Test product in VM. I added it to my cart each time and went through the checkout process adding my real CC data when needed.</p>
