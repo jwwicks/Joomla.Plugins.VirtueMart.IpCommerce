@@ -56,6 +56,18 @@ identifies your transactions.</li>
 <li>Lastly make sure Test Mode is set to Yes</li>
 <li>Save</li>
 <li>Turn on Debugging in VirtueMart. This is needed for the TrxnCodes.</li>
+<li>Change the Credit Card short codes
+<ol>
+<li>Store, Credit Cards List</li>
+<li>Change the short code for American Express from amex to American_Express</li>
+<li>Change the short code for Visa from VISA to Visa</li>
+<li>Change the short code for Mastercard from MC to MasterCard</li>
+<li>Change the short code for Diners from diners to DinersCart_Blanche</li>
+<li>Change the short code for JCB from jcb to JCB</li>
+<li>Change the short code for Discover from discover to Discover</li>
+<li>Save</li>
+</ol>
+</li>
 </ol>
 
 = What's Next - Testing/Certification =
