@@ -1,42 +1,61 @@
-<?php
-/**
-* Paymentech/IPCommerce payment module for Virtuemart
-*
-* Contains all the functionality needed to complete transactions with Paymentech/IPCommerce
-*
-* @version $Id: ps_ipcommerce.cfg.php jwwicks $
-* @package VirtueMart
-* @subpackage payment
-* @author John Wicks <me@jwwicks.com>
-* @copyright Copyright (C) 2009 jwwicks - All rights reserved.
-* @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
-* VirtueMart is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-* See /administrator/components/com_virtuemart/COPYRIGHT.php for copyright notices and details.
-*
-* http://virtuemart.net
-*/
-if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not allowed.' ); 
-
-define ('IPCOM_IS_TEST_TRXN', 'TRUE');
-define ('IPCOM_TEST_IPPF_SOCKET', 'ABC123456789ABC1');
-define ('IPCOM_TEST_TRXN_HOST', 'txn-01.sandbox.ipcommerce.com');
-define ('IPCOM_TEST_IPPFSERVICE_ID', '1234567890');
-define ('IPCOM_IPPF_SOCKET', 'AB1234567890ABC1');
-define ('IPCOM_MERCHANT_ID','12345');
-define ('IPCOM_IPPFSERVICE_ID','123456789A');
-define ('IPCOM_PRIMARY_TRXN_HOST', 'txn-01.ipcommerce.com');
-define ('IPCOM_SECONDARY_TRXN_HOST', 'txn-02.ipcommerce.com');
-define ('IPCOM_PRIMARY_SRVC_HOST', 'cws-01.ipcommerce.com');
-define ('IPCOM_SECONDARY_SRVC_HOST', 'cws-02.ipcommerce.com');
-define ('IPCOM_TRXN_TYPE', 'AUTH');
-define ('IPCOM_CHECK_CARD_CODE', 'YES');
-define ('IPCOM_VERIFIED_STATUS', 'P');
-define ('IPCOM_INVALID_STATUS', 'X');
-define ('IPCOM_EMAIL_MERCHANT', 'YES');
-define ('IPCOM_EMAIL_CUSTOMER', 'YES');
-define ('IPCOM_SHOW_ERROR_CODE', 'YES');
-
-?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="payment">
+	<name>VMPAYMENT_IPCOMMERCE</name>
+	<creationDate>March 2012</creationDate>
+	<author>John William Wicks</author>
+	<authorUrl>http://jwwicks.com/</authorUrl>
+	<copyright>Copyright (C) 2009-2012 jwwicks - All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<version>0.2.99</version>
+	<description>Payment plugin for Chase IPCommerce Gateway</description>
+	<languages>
+		<language tag="en-GB">en-GB.plg_vmpayment_ipcommerce.ini</language>
+	</languages>
+	<files>
+		<filename plugin="ipcommerce">ipcommerce.php</filename>
+	</files>
+	<params addpath="/administrator/components/com_virtuemart/elements">
+		<param type="vmjpluginwarning" />
+		<param type="spacer" default="VMPAYMENT_IPCOMMERCE_MERCHANT_PARAMS" level="level1" />
+		<param name="merchant_id" type="text" size="50" default="12345" label="VMPAYMENT_IPCOMMERCE_MERCHANT_ID" description="VMPAYMENT_IPCOMMERCE_MERCHANT_ID_EXPLAIN" />
+		<params name="transaction_key" type="text" size="50" default="" label="VMPAYMENT_IPCOMMERCE_KEY" description="VMPAYMENT_IPCOMMERCE_KEY_EXPLAIN" />
+		<param type="spacer" default="VMPAYMENT_IPCOMMERCE_SANDBOX_PARAMS" level="level1" />
+		<param name="use_sandbox" type="radio" default="0" label="VMPAYMENT_IPCOMMERCE_ENABLE_TESTMODE" description="VMPAYMENT_IPCOMMERCE_ENABLE_TESTMODE_EXPLAIN">
+			<option value="0">COM_VIRTUEMART_NO</option>
+			<option value="1">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="sandbox_ippf_socket" type="text" size="50" default="" label="VMPAYMENT_IPCOMMERCE_TEST_SOCKET" description="VMPAYMENT_IPCOMMERCE_TEST_SOCKET_EXPLAIN" />
+		<param name-"sandbox_ippf_service_id" type="text" size="50" default="1234567890" label="VMPAYMENT_IPCOMMERCE_TEST_SERVICE_ID" description="VMPAYMENT_IPCOMMERCE_TEST_SERVICE_ID_EXPLAIN" />
+		<param name="sandbox_trxn_host_url" type="text" size="50" default="txn-01.sandbox.ipcommerce.com" label="VMPAYMENT_IPCOMMERCE_TEST_HOST" description="VMPAYMENT_IPCOMMERCE_TEST_HOST_EXPLAIN" />
+		<param type="spacer" default="VMPAYMENT_IPCOMMERCE_PARAMS" level="level1" />
+		<param name="ippf_socket" type="text" size="50" default="" label="VMPAYMENT_IPCOMMERCE_SOCKET" description="VMPAYMENT_IPCOMMERCE_SOCKET_EXPLAIN" />
+		<param name-"ippf_service_id" type="text" size="50" default="1234567890" label="VMPAYMENT_IPCOMMERCE_SERVICE_ID" description="VMPAYMENT_IPCOMMERCE_SERVICE_ID_EXPLAIN" />
+		<param name="trxn_host_url" type="text" size="50" default="txn-01.ipcommerce.com" label="VMPAYMENT_IPCOMMERCE_TRXN_HOST" description="VMPAYMENT_IPCOMMERCE_TRXN_HOST_EXPLAIN" />
+		<param name="trxn_host2_url" type="text" size="50" default="txn-02.ipcommerce.com" label="VMPAYMENT_IPCOMMERCE_TRXN_HOST2" description="VMPAYMENT_IPCOMMERCE_TRXN_HOST2_EXPLAIN" />
+		<param name="srvc_host_url" type="text" size="50" default="cws-01.ipcommerce.com" label="VMPAYMENT_IPCOMMERCE_SRVC_HOST" description="VMPAYMENT_IPCOMMERCE_SRVC_HOST_EXPLAIN" />
+		<param name="srvc_host2_url" type="text" size="50" default="cws-02.ipcommerce.com" label="VMPAYMENT_IPCOMMERCE_SRVC_HOST2" description="VMPAYMENT_IPCOMMERCE_SRVC_HOST2_EXPLAIN" />
+		<param type="spacer" default="VMPAYMENT_IPCOMMERCE_TRXN_PARAMS" level="level1" />
+		<param name="max_sequence_num" type="text" size="50" default="998" label="VMPAYMENT_IPCOMMERCE_MAX_SEQUENCE_NUM" description="VMPAYMENT_IPCOMMERCE_MAX_SEQUENCE_NUM_EXPLAIN" />
+		<param name="credit_transaction_type" type-"select" default="AUTH" label="VMPAYMENT_IPCOMMERCE_BCP_TRANSACTION_TYPE" description="VMPAYMENT_IPCOMMERCE_BCP_TRANSACTION_TYPE_EXPLAIN">
+			<option value="AUTH">VMPAYMENT_IPCOMMERCE_BCP_TRANSACTION_TYPE_AUTHORIZE_CAPTURE</option>
+		</param>
+		<param name="check_cvv_code" type="radio" default="1" label="VMPAYMENT_IPCOMMERCE_ENABLE_CVV_CHECK" description="VMPAYMENT_IPCOMMERCE_ENABLE_CVV_CHECK_EXPLAIN">
+			<option value="0">COM_VIRTUEMART_NO</option>
+			<option value="1">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="transaction_verified_code" type="text" size="50" default="P" label="VMPAYMENT_IPCOMMERCE_TRXN_VERIFIED_CODE" description="VMPAYMENT_IPCOMMERCE_TRXN_VERIFIED_CODE_EXPLAIN" />
+		<param name="transaction_invalid_code" type="text" size="50" default="X" label="VMPAYMENT_IPCOMMERCE_TRXN_INVALID_CODE" description="VMPAYMENT_IPCOMMERCE_TRXN_INVALID_CODE_EXPLAIN" />		
+		<param name="email_merchant" type="radio" default="1" label="VMPAYMENT_IPCOMMERCE_ENABLE_EMAIL_MERCHANT" description="VMPAYMENT_IPCOMMERCE_ENABLE_EMAIL_MERCHANT_EXPLAIN">
+			<option value="0">COM_VIRTUEMART_NO</option>
+			<option value="1">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="email_customer" type="radio" default="1" label="VMPAYMENT_IPCOMMERCE_ENABLE_EMAIL_CUSTOMER" description="VMPAYMENT_IPCOMMERCE_ENABLE_EMAIL_CUSTOMER_EXPLAIN">
+			<option value="0">COM_VIRTUEMART_NO</option>
+			<option value="1">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="show_transaction_debug_code" type="radio" default="0" label="VMPAYMENT_IPCOMMERCE_ENABLE_DEBUG_ERROR_DISPLAY" description="VMPAYMENT_IPCOMMERCE_ENABLE_DEBUG_ERROR_DISPLAY_EXPLAIN">
+			<option value="0">COM_VIRTUEMART_NO</option>
+			<option value="1">COM_VIRTUEMART_YES</option>
+		</param>
+	</params>
+</install>
