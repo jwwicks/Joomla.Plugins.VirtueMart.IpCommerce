@@ -5,6 +5,23 @@
 <p>This readme assumes you have a Joomla 1.5.x and Virtuemart 1.1.x installation already setup. It also assumes you're familiar with editing PHP files. If you're shakey on the latter this process might not be best for you.</p>
 <p>This ZIP file contains all the files necessary to begin the Certification Process for the IPCommerce/Paymentech Payment Platform.</p>
 <p>Note: this plugin is no longer being actively developed since IPCommerce has shutdown their API.</p>
+<p>May 6, 2013
+<br />
+<br />
+RE:  Transaction Processing End of Service
+<br />
+Since IP Commerce’s inception, we have provided our customers with convenient access to both payment processing and commerce services.  As the commoditization of payment processing services accelerates, we have determined that it is no longer economically viable for us to provide payment processing services.  As a result, IP Commerce will cease operation of payment processing services on June 30, 2013. We regret any difficulty this presents for your business; however, we are committed to assist you in making a successful migration to another provider through this date. 
+<br />
+<br />
+Should you seek additional time for migration, I encourage you to contact your existing merchant acquirer.  We have provided merchant acquirers an opportunity to extend IP Commerce-based services on behalf of their customers beyond June 30. 
+<br />
+<br />
+Going forward, IP Commerce will focus its attention on the development and deployment of Commerce Services such as Commerce Reconciliation, Commerce Boarding and Online2Onsite (O2O). These services provide value to our customers above and beyond the payment transaction. We look forward to serving you with these capabilities as we work to ensure that your migration off of the IP Commerce Payments service is as seamless as possible.
+<br />
+
+Sincerely,
+Charlie Wilson
+President</p>
 
 = Details =
 <p>Merchants can not begin testing until they receive testing ID's and URL's via email from the certification group.</p>
