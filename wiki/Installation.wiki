@@ -4,6 +4,7 @@
 = Introduction =
 <p>This readme assumes you have a Joomla 1.5.x and Virtuemart 1.1.x installation already setup. It also assumes you're familiar with editing PHP files. If you're shakey on the latter this process might not be best for you.</p>
 <p>This ZIP file contains all the files necessary to begin the Certification Process for the IPCommerce/Paymentech Payment Platform.</p>
+<p>Note: this plugin is no longer being actively developed since IPCommerce has shutdown their API.</p>
 
 = Details =
 <p>Merchants can not begin testing until they receive testing ID's and URL's via email from the certification group.</p>
