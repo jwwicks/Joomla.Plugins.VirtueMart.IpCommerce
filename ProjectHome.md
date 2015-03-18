@@ -1,0 +1,1 @@
+<p>Virtuemart 1.1.x payment plugin for Joomla 1.5.x</p>
